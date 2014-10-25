@@ -1,0 +1,6 @@
+[submodule "rails_app"]
+	path = rails_app
+	url = https://github.com/k2works/rails_ios_appdev_rails_app.git
+[submodule "ios_app"]
+	path = ios_app
+	url = https://github.com/k2works/travelphoto.git
