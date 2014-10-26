@@ -974,9 +974,10 @@ _app/views/users/registrations/edit.html.haml_
 ```
 
 ## <a name="4">iOSアプリケーション作成</a>
-### Xcodeでプロジェクトを新規作成する
+### プロジェクトの作成
+#### Xcodeでプロジェクトを新規作成する
 
-### ストーリーボードなしのEmpty Applicationを作成する
+#### ストーリーボードなしのEmpty Applicationを作成する
 1. XCode6でSingle View Applicationを作る
 1. Main.stroyboardとLanchScreen.xibを削除する
 1. Info.plistファイル内エントリーの"Main storyboard file base name"と "Launch screen interface file base name"を削除する。
@@ -993,10 +994,11 @@ _app/views/users/registrations/edit.html.haml_
 }
 ```
 
-### pod installを実行する
-_ios_app/travelphoto/Podfile_
+#### pod installを実行する
+_ios_app/Podfile_
 
 ```
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '6.0'
 
 pod 'DCIntrospect'
@@ -1017,35 +1019,34 @@ pod 'ELCImagePickerController'
 ```
 
 ```bash
-$ cd ios_app/travelphoto
+$ cd ios_app
 $ pod install
+$ open travelphoto.xcworkspace
 ```
 
-### QuartzCore frameworkの追加
+#### QuartzCore frameworkの追加
 ![001](https://farm4.staticflickr.com/3950/15338971647_b127852ca6.jpg)
-### travelphoto-Prefix.pchの追加
-_HelloWorld/HelloWorld/HelloWorld-Prefix.pch_
-_ios_app/travelphoto/travelphoto/travelphoto-Prefix.pch_
+
+#### travelphoto-Prefix.pchの追加
+_ios_app/travelphoto/travelphoto-Prefix.pch_
 ```
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "DCIntrospect.h"
-```
-### AppDelegate.mの修正
-_HelloWorld/HelloWorld/AppDelegate.m_
-_ios_app/travelphoto/travelphoto/AppDelegate.m_
-
-```
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    _topViewController = [[TopViewController alloc]init];
-    self.window.rootViewController = _topViewController;
-    [self.window makeKeyAndVisible];
-#if TARGET_IPHONE_SIMULATOR
-    [[DCIntrospect sharedIntrospector]start];
-#endif
-    return YES;
-}
+#import "GHUnitIOS"
+#import "BlocksKit
+#import "Underscore.m"
+#import "AQGridView"
+#import "QuickDialog"
+#import "JASidePanels"
+#import "OCCalendar"
+#import "SDWebImage"
+#import "SVProgressHUD"
+#import "Reachability"
+#import "AFNetworking"
+#import "MagicalRecord"
+#import "NoticeView"
+#import "ELCImagePickerController"
 ```
 
 ## <a name="5">アプリケーション実装１</a>
@@ -1054,3 +1055,5 @@ _ios_app/travelphoto/travelphoto/AppDelegate.m_
 
 # 参照
 * [RailsとiPhoneではじめるアプリケーション開発](http://www.amazon.co.jp/Rails%E3%81%A8iPhone%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA-%E6%A0%97%E7%94%B0-%E7%94%B1%E8%8F%9C/dp/4844334476)
+* [iOSプログラミング入門](https://github.com/k2works/ios_programing_introduction)
+* [CocoaPodsでld: library not found for -lPods clang: error: linker command failed with exit code 1 (use -v to see invocation)](http://qiita.com/Wiiii/items/9fab022420e31fdf9af3)
