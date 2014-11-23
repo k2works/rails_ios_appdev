@@ -1032,24 +1032,44 @@ _ios_app/travelphoto/travelphoto-Prefix.pch_
 ```
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "DCIntrospect.h"
-#import "GHUnitIOS"
-#import "BlocksKit
-#import "Underscore.m"
-#import "AQGridView"
-#import "QuickDialog"
-#import "JASidePanels"
-#import "OCCalendar"
-#import "SDWebImage"
-#import "SVProgressHUD"
-#import "Reachability"
-#import "AFNetworking"
-#import "MagicalRecord"
-#import "NoticeView"
-#import "ELCImagePickerController"
+
 ```
 
+### Controllerの実装
+
++ ログイン前
+  + Lgoin
+    + TPLoginController・・・ログイン用フォームがある画面
+  + Regist
+    + TPRegistController・・・登録用フォームがある画面
++ ログイン後
+  + MyPage
+    + TPMyPageController・・・ログイン後に最初に表示されるController
+    + TPSettingContoller・・・パスワードの変更やログアウトを行うためのフォーム
+  + Travel
+    + TPTravelController・・・旅行一覧が表示される
+    + TPFriendTravelController・・・友達の旅一覧が表示される
+    + TPTravelCreateController・・・新しく旅行を作成する画面
+    + TPTravelShowController・・・旅行が表示される画面・写真一覧が表示される
+    + TPTravelPhotoController・・・写真を全画面で表示するためのController
+  + Friend
+    + TPFriendController・・・友達の一覧が表示されるController・検索などもここから行う
+
+### Core Data
+#### MagicalRecordの初期設定
+#### xcdatamodeldの設計
+#### mogeneratorの設定
+```bash
+$ brew install mogenerator
+$ cd travelphoto
+$ mogenerator -m travelphoto.xcdatamodeld/travelphoto.xcdatamodel -O Model/ -template-var arc=true
+4 machine files and 4 human files generated.
+```
+#### idenfifierの処理
+
+
 ## <a name="5">アプリケーション実装１</a>
+
 ## <a name="6">アプリケーション実装２</a>
 ## <a name="7">アプリケーション実装３</a>
 
