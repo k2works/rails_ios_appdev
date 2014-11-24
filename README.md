@@ -1081,6 +1081,7 @@ _ios_app/travelphoto/travelphoto-Prefix.pch_に追加
 ```
 #import "TPUserInfo.h"
 ```
+Security.frameworkを利用するように設定する
 
 ### 画面遷移の実装
 
@@ -1088,8 +1089,6 @@ _ios_app/travelphoto/travelphoto-Prefix.pch_に追加
 #### TPLeftMenuControllerの作成
 #### UITableViewDataSource/UITableViewDelegateの実装
 #### 画面切り替えの実装
-
-Security.frameworkを利用するように設定する
 
 ## <a name="5">アプリケーション実装１</a>
 
