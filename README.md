@@ -1067,6 +1067,29 @@ $ mogenerator -m travelphoto.xcdatamodeld/travelphoto.xcdatamodel -O Model/ -tem
 ```
 #### idenfifierの処理
 
+### シングルトンクラスの設計
+_ios_app/Podfile_
+```
+pod 'LUKeychainAccess'
+```
+
+```
+$ pod install
+```
+
+_ios_app/travelphoto/travelphoto-Prefix.pch_に追加
+```
+#import "TPUserInfo.h"
+```
+
+### 画面遷移の実装
+
+#### AppDelegateの修正
+#### TPLeftMenuControllerの作成
+#### UITableViewDataSource/UITableViewDelegateの実装
+#### 画面切り替えの実装
+
+Security.frameworkを利用するように設定する
 
 ## <a name="5">アプリケーション実装１</a>
 
